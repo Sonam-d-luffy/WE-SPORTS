@@ -38,7 +38,6 @@ useEffect(() => {
     })
     const toggle = () => {
          setIsLogin((prev) => !prev)
-          console.log("Toggled, isLogin:", !isLogin);
   
     }
     const handleChange = (e) => {
@@ -73,7 +72,7 @@ useEffect(() => {
         try {
             if(isLogin){
                 const {email , password } = formData
-                const res = await axios.post('http://localhost:5000/api/gamer-auth/login' , {email , password})
+                const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/gamer-auth/login` , {email , password})
                          setMessage(res.data.message)
 // Example in your Signup.jsx after successful signup
       setMessage(res.data.message)
@@ -96,7 +95,7 @@ useEffect(() => {
     
                 })
                 
-            const res = await axios.post('http://localhost:5000/api/gamer-auth/signup' , form ,{
+            const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/gamer-auth/signup` , form ,{
                 headers: {'Content-Type' : 'application/json'}
             })
                   // redirect to OTP page instead of home

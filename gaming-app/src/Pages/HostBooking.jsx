@@ -13,7 +13,7 @@ const HostBooking = () => {
     useEffect(() => {
         const fetchBookings = async() => {
             try {
-                const res = await axios.get(`http://localhost:5000/api/booking/games-booking/${gameId}`)
+                const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/booking/games-booking/${gameId}`)
                 setBooking(res.data.bookings)
             } catch (error) {
                 setMessage(error.message)
@@ -32,7 +32,7 @@ const HostBooking = () => {
         setBooking(booking.filter((b) => b._id !== id))
         
         try {
-            await axios.delete(`http://localhost:5000/api/booking/delete-booking/${id}`)
+            await axios.delete(`${process.env.REACT_APP_API_URL}/api/booking/delete-booking/${id}`)
             setMessage('Booking deleted successfully')
             
             // Clear success message after 3 seconds

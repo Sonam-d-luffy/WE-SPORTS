@@ -53,7 +53,7 @@ useEffect(() => {
         const fetchGames = async() => {
             setLoading(true)
             try {
-                const res = await axios.get(`http://localhost:5000/api/games/${tournamentId}/yourgames` )
+                const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/games/${tournamentId}/yourgames` )
                 setGames(res.data.games)
             } catch (error) {
                         console.error(error);

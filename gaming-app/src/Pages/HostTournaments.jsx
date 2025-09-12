@@ -40,7 +40,7 @@ useEffect(() => {
     const getTournaments = async(e) => {
         setLoading(true)
         try {
-            const res = await axios.get('http://localhost:5000/api/games/allTournaments')
+            const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/games/allTournaments`)
             setTournaments(res.data.alltournaments)
             setMessage(res.data.message)
 
@@ -57,7 +57,7 @@ useEffect(() => {
     try {
       const newStatus = currentStatus === "yes" ? "no" : "yes";
 
-      await axios.put(`http://localhost:5000/api/games/${id}/live`, {
+      await axios.put(`${process.env.REACT_APP_API_URL}/api/games/${id}/live`, {
         live: newStatus,
       });
 
