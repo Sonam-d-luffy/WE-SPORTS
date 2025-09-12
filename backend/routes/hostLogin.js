@@ -1,7 +1,7 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import bcrypt from 'bcrypt'
-import Host from '../Schema/hostSchema.js'
+import Host from '../schema/hostSchema.js'
 import jwt from 'jsonwebtoken'
 import uploads from '../utils/multer.js'
 
