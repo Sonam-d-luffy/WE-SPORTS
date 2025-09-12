@@ -12,7 +12,9 @@ import verify from './routes/verification.js'
 const app = express()
 
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+  origin: "https://we-sports-teal.vercel.app/"
+}));
 app.use(express.urlencoded({ extended: true })); 
 
 app.use('/api/host-auth' , hostLogin)
