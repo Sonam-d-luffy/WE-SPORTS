@@ -13,7 +13,7 @@ const app = express()
 
 app.use(express.json())
 app.use(cors({
-  origin: "https://we-sports-teal.vercel.app/"
+  origin: ""
 }));
 app.use(express.urlencoded({ extended: true })); 
 
