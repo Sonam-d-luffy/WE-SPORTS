@@ -57,6 +57,9 @@ useEffect(() => {
         setLoading(true)
         try {
             const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/games/allTournaments`)
+            console.log("API URL:", process.env.REACT_APP_API_URL);
+console.log("API URL:", process.env.REACT_APP_API_URL);
+
             setTournaments(res.data.alltournaments)
             setMessage(res.data.message)
 
