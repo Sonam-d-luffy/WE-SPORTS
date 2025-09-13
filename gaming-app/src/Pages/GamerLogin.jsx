@@ -61,7 +61,7 @@ useEffect(() => {
           }));
         }
       } catch (error) {
-        console.error("Invalid Pincode", error);
+        setMessage('Error fetching location data , invalid pincode');
       }
     }
   };
@@ -113,7 +113,6 @@ navigate('/otp-verify', { state: { gamerId: res.data.userId } });
             }
            // navigate('/')
         } catch (error) {
-             console.log(error.response?.data || error.message)
   setMessage(error.response?.data?.message || error.message)
         }finally{
           setLoading(false)

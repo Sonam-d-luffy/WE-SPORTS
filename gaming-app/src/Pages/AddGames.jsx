@@ -54,7 +54,6 @@ useEffect(() => {
                 data.append(key , formdata[key])
             })
             data.append('image' , image)
-            console.log(formdata)
 
             const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/games/${tournamentId}/games`, data ,{headers: {'Content-Type' : 'multipart/form-data'}})
 

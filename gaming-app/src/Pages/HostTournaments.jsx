@@ -68,7 +68,7 @@ useEffect(() => {
         )
       );
     } catch (error) {
-      console.error(error.message);
+      setMessage(error.response?.data?.message || 'Failed to update live status.');
     }
   };
 const deleteTournament = async (id) => {

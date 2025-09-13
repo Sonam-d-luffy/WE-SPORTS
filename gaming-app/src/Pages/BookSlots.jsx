@@ -33,7 +33,6 @@ const BookSlots = () => {
         setGameName(res.data.game.name)
         setAmount(res.data.game.price)
       } catch (err) {
-        console.error(err)
         alert('Failed to fetch game data')
       } finally {
         setLoading(false)
@@ -73,7 +72,6 @@ const BookSlots = () => {
       setPaymentData(res.data.paymentInfo)
     } catch (err) {
       
-      console.error(err)
       alert(err.response?.data?.message || 'Failed to generate QR')
     }
   
@@ -103,7 +101,6 @@ const BookSlots = () => {
       setPaymentData(null)
       navigate(`/${tournamentId}/yourgames`)
     } catch (err) {
-      console.error(err)
       alert(err.response?.data?.message || 'Payment verification failed')
     }
   }

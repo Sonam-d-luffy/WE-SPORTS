@@ -83,13 +83,11 @@ const TournamentUpload = () => {
       data.append("gameName", formdata.gameName);
       data.append("description", formdata.description);
       data.append("live", formdata.live);
-      //console.log(formdata);
       if(image) {
         data.append('image', image);
       }
 
       const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/games/gamesUpload`, data, {headers: {'Content-Type': 'multipart/form-data'}});
-      // console.log(res.data);
       //setTournaments(res.data.tournaments)
       // setMessage(res.data.message)
       setFormdata({
@@ -101,7 +99,7 @@ const TournamentUpload = () => {
       navigate('/hostTournament')
     } catch (error) {
       // setMessage(error.message || 'Error occured')
-      console.log(error);
+      setMessage(error.response?.data?.message || 'Error occured')
     }
   };
 

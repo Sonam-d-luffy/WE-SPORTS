@@ -20,10 +20,8 @@ const Otp = () => {
     if(!gamerId){
       setMessage('No gamer id found , please sign in first')
       setLoading(false)
-      //console.log(message)
       return
     }
-    //console.log(gamerId)
     try {
       const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/verify/verify-email` , {gamerId , otp})
       if(res.data.success){
@@ -34,7 +32,7 @@ const Otp = () => {
         setMessage('wrong otp')
       }
     } catch (error) {
-      console.error(error)
+      setMessage(error.response?.data?.message || 'OTP verification failed')
     } finally{
       setLoading(false)
     }
@@ -46,7 +44,7 @@ const Otp = () => {
       const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/verify/resend-otp`, { gamerId });
       setMessage(`New OTP sent: ${res.data.otp}`); // ❌ for testing, remove later
     } catch (error) {
-      console.error(error);
+    
       setMessage(error.response?.data?.message || 'Error resending OTP');
     } finally{
       setResendLoading(false)

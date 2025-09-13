@@ -49,7 +49,7 @@ const HostLogin = () => {
           }));
         }
       } catch (error) {
-        console.error("Invalid Pincode", error);
+        setMessage("Invalid Pincode");
       }
     }
   };
@@ -93,15 +93,12 @@ const HostLogin = () => {
             navigate('/hostPage')
             }
         } catch (error) {
-             console.log(error.response?.data || error.message)
   setMessage(error.response?.data?.message || error.message)
         }finally{
           setLoading(false)
         }
     }
-    // useEffect(() => {
-    //   console.log(user)
-    // },[user])
+    
 
      
     const gameIcons = [

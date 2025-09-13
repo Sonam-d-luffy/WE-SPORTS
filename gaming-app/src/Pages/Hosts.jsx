@@ -33,7 +33,6 @@ useEffect(() => {
         setHosts(res.data.hosts)
       } catch (error) {
         setMessage('Error fetching hosts')
-        console.error(error)
       } finally {
         setLoading(false)
       }

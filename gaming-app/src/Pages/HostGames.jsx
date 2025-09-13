@@ -38,7 +38,6 @@ useEffect(() => {
         )
         setGames(res.data.games)
       } catch (error) {
-        console.error(error)
         setMessage('Failed to fetch games.')
       } finally {
         setLoading(false)
@@ -56,7 +55,6 @@ useEffect(() => {
       setGames(games.filter((game) => game._id !== gameId))
       setMessage('Game deleted successfully.')
     } catch (error) {
-      console.error(error)
       setMessage('Failed to delete game.')
     }
   }
@@ -75,7 +73,6 @@ useEffect(() => {
       )
       setMessage(`Game live status updated to "${newStatus}".`)
     } catch (error) {
-      console.error(error)
       setMessage('Failed to update live status.')
     }
   }

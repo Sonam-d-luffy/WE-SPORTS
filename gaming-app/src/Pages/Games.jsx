@@ -56,7 +56,6 @@ useEffect(() => {
                 const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/games/${tournamentId}/yourgames` )
                 setGames(res.data.games)
             } catch (error) {
-                        console.error(error);
         setMessage('Failed to fetch games.');
             } finally{
                 setLoading(false)
