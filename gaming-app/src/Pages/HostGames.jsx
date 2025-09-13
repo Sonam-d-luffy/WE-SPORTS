@@ -34,7 +34,7 @@ useEffect(() => {
       setLoading(true)
       try {
         const res = await axios.get(
-          `${process.env.REACT_APP_API_URL}/api/games/${tournamentId}/yourgames`
+          `${import.meta.env.VITE_API_URL}/api/games/${tournamentId}/yourgames`
         )
         setGames(res.data.games)
       } catch (error) {
@@ -51,7 +51,7 @@ useEffect(() => {
     if (!window.confirm('Are you sure you want to delete this game?')) return
     try {
       await axios.delete(
-        `${process.env.REACT_APP_API_URL}/api/games/${tournamentId}/${gameId}/deletegame`
+        `${import.meta.env.VITE_API_URL}/api/games/${tournamentId}/${gameId}/deletegame`
       )
       setGames(games.filter((game) => game._id !== gameId))
       setMessage('Game deleted successfully.')
@@ -65,7 +65,7 @@ useEffect(() => {
     const newStatus = currentStatus === 'yes' ? 'no' : 'yes'
     try {
       const res = await axios.put(
-        `${process.env.REACT_APP_API_URL}/api/games/${tournamentId}/${gameId}/live`,
+        `${import.meta.env.VITE_API_URL}/api/games/${tournamentId}/${gameId}/live`,
         { gameLive: newStatus }
       )
       setGames(

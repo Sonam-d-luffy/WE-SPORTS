@@ -60,7 +60,7 @@ const HostLogin = () => {
         try {
             if(isLogin){
                 const {email , password } = formData
-                const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/host-auth/login` , {email , password})
+                const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/host-auth/login` , {email , password})
                 setMessage(res.data.message)
                 alert(res.data.message)
                 setUser(res.data.user)
@@ -78,7 +78,7 @@ const HostLogin = () => {
                 if(image) {
                     form.append('image' , image)
                 }
-            const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/host-auth/signup` , form ,{
+            const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/host-auth/signup` , form ,{
                 headers: {'Content-Type' : 'multipart/form-data'}
             })
 

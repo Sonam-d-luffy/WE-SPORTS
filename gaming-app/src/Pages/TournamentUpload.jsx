@@ -88,7 +88,7 @@ const TournamentUpload = () => {
         data.append('image', image);
       }
 
-      const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/games/gamesUpload`, data, {headers: {'Content-Type': 'multipart/form-data'}});
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/games/gamesUpload`, data, {headers: {'Content-Type': 'multipart/form-data'}});
       // console.log(res.data);
       //setTournaments(res.data.tournaments)
       // setMessage(res.data.message)

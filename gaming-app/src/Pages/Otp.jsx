@@ -25,7 +25,7 @@ const Otp = () => {
     }
     //console.log(gamerId)
     try {
-      const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/verify/verify-email` , {gamerId , otp})
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/verify/verify-email` , {gamerId , otp})
       if(res.data.success){
         setMessage(res.data.message || 'OTP verification complete')
         alert("You are verified successfully , please login to book slots")
@@ -43,7 +43,7 @@ const Otp = () => {
   const handleResendOTP = async () => {
     setResendLoading(true)
     try {
-      const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/verify/resend-otp`, { gamerId });
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/verify/resend-otp`, { gamerId });
       setMessage(`New OTP sent: ${res.data.otp}`); // ❌ for testing, remove later
     } catch (error) {
       console.error(error);

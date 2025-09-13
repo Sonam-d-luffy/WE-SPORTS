@@ -40,7 +40,7 @@ useEffect(() => {
     const getTournaments = async(e) => {
         setLoading(true)
         try {
-            const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/games/allTournaments`)
+            const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/games/allTournaments`)
             setTournaments(res.data.alltournaments)
             setMessage(res.data.message)
 
@@ -57,7 +57,7 @@ useEffect(() => {
     try {
       const newStatus = currentStatus === "yes" ? "no" : "yes";
 
-      await axios.put(`${process.env.REACT_APP_API_URL}/api/games/${id}/live`, {
+      await axios.put(`${import.meta.env.VITE_API_URL}/api/games/${id}/live`, {
         live: newStatus,
       });
 
@@ -79,7 +79,7 @@ const deleteTournament = async (id) => {
   setTournaments((prev) => prev.filter((t) => t._id !== id));
 
   try {
-    await axios.delete(`http://localhost:5000/api/games/${id}/delete`);
+    await axios.delete(`${import.meta.env.VITE_API_URL}/api/games/${id}/delete`);
     setMessage("Tournament deleted successfully");
   } catch (error) {
     setMessage(error.response?.data?.message || error.message);

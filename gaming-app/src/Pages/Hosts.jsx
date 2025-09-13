@@ -29,7 +29,7 @@ useEffect(() => {
     const fetchHosts = async () => {
       setLoading(true)
       try {
-        const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/host-auth/allhosts`)
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/host-auth/allhosts`)
         setHosts(res.data.hosts)
       } catch (error) {
         setMessage('Error fetching hosts')

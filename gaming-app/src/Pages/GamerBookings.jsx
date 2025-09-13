@@ -30,7 +30,7 @@ useEffect(() => {
     useEffect(() => {
         const fetchBookings = async() => {
             try {
-                const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/booking/your-bookings/${gamerId}`)
+                const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/booking/your-bookings/${gamerId}`)
                 setBooking(res.data.bookings)
             } catch (error) {
                 setMessage(error.message)

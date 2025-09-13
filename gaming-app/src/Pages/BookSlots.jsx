@@ -29,7 +29,7 @@ const BookSlots = () => {
     }
     const fetchGame = async () => {
       try {
-        const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/games/${tournamentId}/${gameId}`)
+        const res = await axios.get(`${process.env.VITE_API_URL}/api/games/${tournamentId}/${gameId}`)
         setGameName(res.data.game.name)
         setAmount(res.data.game.price)
       } catch (err) {
@@ -60,7 +60,7 @@ const BookSlots = () => {
     }
 
     try {
-      const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/booking/book`, {
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/booking/book`, {
         username,
         instaId,
         userId,
@@ -98,7 +98,7 @@ const BookSlots = () => {
         transactionId
       }
 
-      const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/booking/verify-booking`, payload)
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/booking/verify-booking`, payload)
       alert('Payment will be verified verified! Booking saved.')
       setPaymentData(null)
       navigate(`/${tournamentId}/yourgames`)
