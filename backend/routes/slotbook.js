@@ -73,7 +73,7 @@ router.post('/book', async (req, res) => {
     const upiLink = `upi://pay?pa=${upiId}&pn=${encodeURIComponent(
       upiName
     )}&am=${amount}&cu=INR&tn=${encodeURIComponent(
-      'Tournament Slot Booking'
+      'WE'
     )}`
 
     // ✅ Generate QR Code
