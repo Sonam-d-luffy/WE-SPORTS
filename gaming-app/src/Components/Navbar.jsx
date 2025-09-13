@@ -57,7 +57,7 @@ const Navbar = () => {
             className="bg-purple-200/30 hover:bg-purple-300/40 text-purple-100 hover:text-white px-6 py-2.5 rounded-2xl font-semibold text-sm transition-all duration-300 flex items-center space-x-2 shadow-sm hover:shadow-md transform hover:scale-105 backdrop-blur-sm border border-purple-300/20 drop-shadow-lg"
           >
             <User className="w-4 h-4" />
-            <span>{currentUser? currentUser?.name :  "Login"}</span>
+            {currentUser ? currentUser.name.split(" ")[0] : "Login"}
           </button>
         </div>
       </div>
