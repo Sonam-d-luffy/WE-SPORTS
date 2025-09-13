@@ -20,6 +20,9 @@ const BookSlots = () => {
   })
   const [paymentData, setPaymentData] = useState(null)
   const [transactionId, setTransactionId] = useState('')
+  const tandcpage = () => {
+        navigate('/t&c')
+  }
 
   // Fetch game info
   useEffect(() => {
@@ -283,7 +286,7 @@ const BookSlots = () => {
                     )}
                   </label>
                 </div>
-                <label htmlFor="terms" className="text-gray-300 text-sm sm:text-base cursor-pointer group-hover:text-white transition-colors duration-200">
+                <label onClick={tandcpage} htmlFor="terms" className="text-gray-300 text-sm sm:text-base cursor-pointer group-hover:text-white transition-colors duration-200">
                   I agree to Terms & Conditions
                 </label>
               </div>

@@ -15,6 +15,7 @@ import HostGames from './Pages/HostGames'
 import HostBooking from './Pages/HostBooking'
 import Otp from './Pages/Otp'
 import GamerBookings from './Pages/GamerBookings'
+import Term from './Pages/Term'
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
   <Route path='/hostPage' element={<HostPage/>}/>
   <Route path='/tournaments' element={<Tournaments/>}/>
   <Route path='/hosts' element={<Hosts/>}/>
+  <Route path='/t&c' element={<Term/>}/>
   <Route path='/:tournamentId/:gameId/bookslots' element={<BookSlots/>}/>
   <Route path='/hostTournament' element={<HostTournaments/>}/>
   <Route path='/:tournamentId/uploadGames' element={<AddGames/>}/>
