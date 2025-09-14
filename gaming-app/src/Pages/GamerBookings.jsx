@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { Home, Gamepad2, User, Trophy, DollarSign, CheckCircle, XCircle, Clock } from 'lucide-react'
+import { Home, Gamepad2, User, Trophy, CheckCircle, XCircle, Clock, IndianRupee } from 'lucide-react'
 import assets from '../assets/assets'
 
 const GamerBookings = () => {
@@ -168,8 +168,8 @@ useEffect(() => {
                                         </div>
 
                                         <div className="flex items-center space-x-2 sm:space-x-3">
-                                            <DollarSign className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-green-400" />
-                                            <span className="text-base sm:text-lg font-bold text-green-300">${b.amount}</span>
+                                            <IndianRupee className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-green-400" />
+                                            <span className="text-base sm:text-lg font-bold text-green-300">{b.amount}</span>
                                         </div>
                                     </div>
 
