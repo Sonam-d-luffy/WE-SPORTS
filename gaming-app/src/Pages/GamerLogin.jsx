@@ -213,7 +213,7 @@ navigate('/otp-verify', { state: { gamerId: res.data.userId } });
                                             name="name"
                                             value={formData.name}
                                             onChange={handleChange}
-                                            placeholder="Enter Your Gamer Tag"
+                                            placeholder="Name"
                                             className="w-full pl-12 pr-4 py-4 bg-black/20 border-2 border-white/10 rounded-xl text-white placeholder-gray-300 focus:border-fuchsia-500 focus:ring-4 focus:ring-fuchsia-500/20 transition-all duration-300 font-semibold hover:bg-black/30 hover:border-fuchsia-400/30 backdrop-blur-sm"
                                         />
                                         <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-fuchsia-500/5 to-pink-500/5 opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
@@ -227,7 +227,7 @@ navigate('/otp-verify', { state: { gamerId: res.data.userId } });
                                             name="local"
                                             value={formData.local}
                                             onChange={handleChange}
-                                            placeholder="Your Gaming Zone"
+                                            placeholder="Local (e.g., kashipur)"
                                             className="w-full pl-12 pr-4 py-4 bg-black/20 border-2 border-white/10 rounded-xl text-white placeholder-gray-300 focus:border-fuchsia-500 focus:ring-4 focus:ring-fuchsia-500/20 transition-all duration-300 font-semibold hover:bg-black/30 hover:border-fuchsia-400/30 backdrop-blur-sm"
                                         />
                                         <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-fuchsia-500/5 to-pink-500/5 opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
@@ -238,7 +238,7 @@ navigate('/otp-verify', { state: { gamerId: res.data.userId } });
                                         <div className="relative group">
                                             <input
                                                 type="text"
-                                                name="pincode"
+                                                name="pincode (type manually)"
                                                 value={formData.pincode}
                                                 onChange={handleChange}
                                                 onBlur={handlePincodeBlur}
