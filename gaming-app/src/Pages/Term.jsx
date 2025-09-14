@@ -21,10 +21,10 @@ const Term = () => {
         <div className="flex items-center justify-between mb-8">
           {/* Logo Section - Left */}
           <div className="flex items-center">
-        <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-purple-500 via-pink-500 to-red-500 rounded-lg flex items-center justify-center shadow-lg">
+        <div className="flex items-center justify-center">
   <img
     src={assets.logo1}
-    className="w-6 h-6 sm:w-8 sm:h-8 transition-transform duration-300 hover:rotate-12"
+    className="w-12 h-12 sm:w-16 sm:h-16 transition-transform duration-300 hover:rotate-12"
   />
 </div>
 
