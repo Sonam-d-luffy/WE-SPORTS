@@ -32,7 +32,7 @@ const BookSlots = () => {
     }
     const fetchGame = async () => {
       try {
-        const res = await axios.get(`${process.env.VITE_API_URL}/api/games/${tournamentId}/${gameId}`)
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/games/${tournamentId}/${gameId}`)
         setGameName(res.data.game.name)
         setAmount(res.data.game.price)
       } catch (err) {
