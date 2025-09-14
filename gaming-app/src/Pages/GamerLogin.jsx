@@ -238,11 +238,11 @@ navigate('/otp-verify', { state: { gamerId: res.data.userId } });
                                         <div className="relative group">
                                             <input
                                                 type="text"
-                                                name="pincode (type manually)"
+                                                name="pincode"
                                                 value={formData.pincode}
                                                 onChange={handleChange}
                                                 onBlur={handlePincodeBlur}
-                                                placeholder="Pincode"
+                                                placeholder="Pincode(type manually)"
                                                 className="w-full px-4 py-4 bg-black/20 border-2 border-white/10 rounded-xl text-white placeholder-gray-300 focus:border-fuchsia-500 focus:ring-4 focus:ring-fuchsia-500/20 transition-all duration-300 font-semibold hover:bg-black/30 hover:border-fuchsia-400/30 backdrop-blur-sm"
                                             />
                                         </div>
