@@ -13,16 +13,17 @@ const app = express();
 
 // --------------------- CORS Setup ---------------------
 const allowedOrigins = [
-  process.env.FRONTEND_URL_LOCAL, // http://localhost:5173
-  process.env.FRONTEND_URL        // https://we-sports-teal.vercel.app
+  process.env.FRONTEND_URL_LOCAL?.trim().replace(/\/$/, ""),
+  process.env.FRONTEND_URL?.trim().replace(/\/$/, "")
 ];
 
 app.use(cors({
   origin: function (origin, callback) {
-    // allow requests with no origin (like mobile apps, curl, or same-origin)
+    // allow requests with no origin (server-to-server, curl, mobile apps)
     if (!origin) return callback(null, true);
 
-    if (allowedOrigins.includes(origin)) {
+    const cleanOrigin = origin.replace(/\/$/, "");
+    if (allowedOrigins.includes(cleanOrigin)) {
       return callback(null, true);
     } else {
       console.error("❌ CORS blocked:", origin);
@@ -50,10 +51,15 @@ app.use("/api/games", gameRoute);
 app.use("/api/booking", booking);
 app.use("/api/verify", verify);
 
+// --------------------- Health Check ---------------------
+app.get("/health", (req, res) => {
+  res.json({ status: "ok", time: new Date() });
+});
+
 // --------------------- React Frontend Serving ---------------------
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const frontendPath = path.join(__dirname, "dist"); // <-- Vite build output
+const frontendPath = path.join(__dirname, "dist"); // Vite build output
 
 app.use(express.static(frontendPath));
 
