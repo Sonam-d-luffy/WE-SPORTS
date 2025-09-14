@@ -207,26 +207,41 @@ router.get("/:tournamentId/yourgames", async (req, res) => {
     res.status(500).json({ message: "Server error" });
   }
 });
-
-router.get('/:tournamentId/:gameId' , async(req , res) => {
+router.get("/:tournamentId/:gameId", async (req, res) => {
   try {
-    const {gameId ,  tournamentId} = req.params
-     // validate tournamentId
+    const { tournamentId, gameId } = req.params;
+
+    // Validate IDs
     if (!mongoose.Types.ObjectId.isValid(tournamentId)) {
       return res.status(400).json({ message: "Invalid tournament ID" });
     }
-    const tournament = await Tournament.findById(tournamentId)
-      if (!tournament) {
+    if (!mongoose.Types.ObjectId.isValid(gameId)) {
+      return res.status(400).json({ message: "Invalid game ID" });
+    }
+
+    // Find tournament
+    const tournament = await Tournament.findById(tournamentId);
+    if (!tournament) {
       return res.status(404).json({ message: "Tournament not found" });
     }
-    const game = tournament.games.id(gameId)
-    if(!game) return res.status(404).json({message : 'Game not found'})
-      return res.status(200).json({message: 'Game found' , game: game})
-  } catch (error) {
-     console.error("Error fetching games:", error);
-    res.status(500).json({ message: "Server error" });
-  }
-})
 
+    // Find game inside tournament
+    const game = tournament.games.id(gameId);
+    if (!game) {
+      return res.status(404).json({ message: "Game not found" });
+    }
+
+    // Success response
+    return res.status(200).json({
+      message: "Game found",
+      tournamentId,
+      gameId,
+      game,
+    });
+  } catch (error) {
+    console.error("Error fetching game:", error);
+    res.status(500).json({ message: "Server error", error: error.message });
+  }
+});
 
 export default router
