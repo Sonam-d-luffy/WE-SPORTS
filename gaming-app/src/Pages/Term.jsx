@@ -21,11 +21,13 @@ const Term = () => {
         <div className="flex items-center justify-between mb-8">
           {/* Logo Section - Left */}
           <div className="flex items-center">
-            <div className="p-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl shadow-lg hover:bg-white/15 transition-all duration-300">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-purple-500 via-pink-500 to-red-500 rounded-lg flex items-center justify-center shadow-lg">
-                <img src={assets.logo1} className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
-              </div>
-            </div>
+        <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-purple-500 via-pink-500 to-red-500 rounded-lg flex items-center justify-center shadow-lg">
+  <img
+    src={assets.logo1}
+    className="w-6 h-6 sm:w-8 sm:h-8 transition-transform duration-300 hover:rotate-12"
+  />
+</div>
+
             <div className="ml-3 hidden sm:block">
               <div className="text-white font-bold text-lg">Tournament</div>
               <div className="text-gray-300 text-sm">Gaming Hub</div>
