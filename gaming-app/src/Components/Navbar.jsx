@@ -233,6 +233,15 @@ const Navbar = () => {
             <span>Logout</span>
           </button>
             }
+            {currentUser &&
+              <button
+            onClick={bookings(currentUser._id)}
+            className="bg-gradient-to-r from-purple-200/90 to-purple-300/90 hover:from-purple-300 hover:to-purple-400 text-purple-800 hover:text-purple-900 px-6 py-2.5 rounded-2xl font-semibold text-sm transition-all duration-300 flex items-center space-x-2 shadow-sm hover:shadow-md transform hover:scale-105"
+          >
+            <User className="w-4 h-4" />
+            <span>Bookings</span>
+          </button>
+            }
            
 
             {/* Enhanced Decorative Elements */}
