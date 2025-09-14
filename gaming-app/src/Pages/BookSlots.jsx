@@ -342,7 +342,7 @@ const BookSlots = () => {
                   </div>
                 </div>
 
-                <div className="mb-4 sm:mb-6">
+               {/* <div className="mb-4 sm:mb-6">
                   <p className="text-gray-300 text-sm sm:text-base mb-2">OR pay using link:</p>
                   <a 
                     href={paymentData.upiLink} 
@@ -355,7 +355,7 @@ const BookSlots = () => {
                     </svg>
                     <span>Open Payment Link</span>
                   </a>
-                </div>
+                </div>}
 
                 {/* Transaction ID Input */}
                 <div className="space-y-3 sm:space-y-4">
