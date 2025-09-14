@@ -224,24 +224,34 @@ const Navbar = () => {
                 <div className="absolute top-0 left-0 h-0.5 bg-gradient-to-r from-blue-300 to-indigo-300 w-0 group-hover:w-full transition-all duration-700 rounded-full" style={{ transitionDelay: '0.2s' }}></div>
               </button>
             </div>
-            {currentUser &&
-              <button
-            onClick={logout}
-            className="bg-gradient-to-r from-purple-200/90 to-purple-300/90 hover:from-purple-300 hover:to-purple-400 text-purple-800 hover:text-purple-900 px-6 py-2.5 rounded-2xl font-semibold text-sm transition-all duration-300 flex items-center space-x-2 shadow-sm hover:shadow-md transform hover:scale-105"
-          >
-            <User className="w-4 h-4" />
-            <span>Logout</span>
-          </button>
-            }
-            {currentUser &&
-              <button
-            onClick={bookings(currentUser._id)}
-            className="bg-gradient-to-r from-purple-200/90 to-purple-300/90 hover:from-purple-300 hover:to-purple-400 text-purple-800 hover:text-purple-900 px-6 py-2.5 rounded-2xl font-semibold text-sm transition-all duration-300 flex items-center space-x-2 shadow-sm hover:shadow-md transform hover:scale-105"
-          >
-            <User className="w-4 h-4" />
-            <span>Bookings</span>
-          </button>
-            }
+      {currentUser && (
+  <>
+    {/* Logout button first */}
+    <button
+      onClick={logout}
+      className="bg-gradient-to-r from-purple-200/90 to-purple-300/90 hover:from-purple-300 hover:to-purple-400 
+                 text-purple-800 hover:text-purple-900 px-6 py-2.5 rounded-2xl font-semibold text-sm 
+                 transition-all duration-300 flex items-center space-x-2 shadow-sm hover:shadow-md 
+                 transform hover:scale-105"
+    >
+      <User className="w-4 h-4" />
+      <span>Logout</span>
+    </button>
+
+    {/* Bookings button second */}
+    <button
+      onClick={() => bookings(currentUser._id)}
+      className="bg-gradient-to-r from-purple-200/90 to-purple-300/90 hover:from-purple-300 hover:to-purple-400 
+                 text-purple-800 hover:text-purple-900 px-6 py-2.5 rounded-2xl font-semibold text-sm 
+                 transition-all duration-300 flex items-center space-x-2 shadow-sm hover:shadow-md 
+                 transform hover:scale-105"
+    >
+      <User className="w-4 h-4" />
+      <span>Bookings</span>
+    </button>
+  </>
+)}
+
            
 
             {/* Enhanced Decorative Elements */}
