@@ -100,7 +100,6 @@ useEffect(() => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-purple-900/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
-                <h3 className="text-xl font-bold mb-1">Lead Host 2</h3>
                 <p className="text-sm text-purple-200">MANAGER</p>
               </div>
             </div>
@@ -127,7 +126,7 @@ useEffect(() => {
               </div>
               
               <div className="absolute bottom-6 left-6 right-6 text-white opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-6 group-hover:translate-y-0">
-                <h3 className="text-2xl font-bold mb-2">Lead Host</h3>
+                <h3 className="text-2xl font-bold mb-2">Host</h3>
                 <p className="text-lg text-pink-200">Star Creator</p>
                 <div className="flex justify-center mt-3">
                   <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-4 py-1 rounded-full text-sm font-bold">
@@ -149,7 +148,6 @@ useEffect(() => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-blue-900/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
-                <h3 className="text-xl font-bold mb-1">Lead Host 2</h3>
                 <p className="text-sm text-blue-200">Behind The Scene</p>
               </div>
             </div>
