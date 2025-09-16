@@ -67,7 +67,7 @@ const UserPage = () => {
               >
                 <div className="flex items-center space-x-3 sm:space-x-4">
                   <span className="text-2xl sm:text-3xl group-hover:animate-bounce">👑</span>
-                  <span className="text-white font-semibold text-lg sm:text-xl">View Organization Leads</span>
+                  <span className="text-white font-semibold text-lg sm:text-xl">Founding Members</span>
                 </div>
               </div>
             </div>
