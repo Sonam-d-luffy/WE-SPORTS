@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { Home, Gamepad2, Clock, Calendar, DollarSign, Users, FileText, Image, Sparkles, Plus, Zap } from 'lucide-react'
+import { Home, Gamepad2, Clock, Calendar, DollarSign, Users, FileText, Image, Sparkles, Plus, Zap, Link } from 'lucide-react'
 import assets from '../assets/assets'
 
 const AddGames = () => {
@@ -242,12 +242,12 @@ useEffect(() => {
                                     {/* Date */}
                                 <div className="group relative">
                                     <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                                        <Calendar className="h-5 w-5 text-purple-400 group-focus-within:text-pink-400 transition-colors duration-300" />
+                                        <Link className="h-5 w-5 text-purple-400 group-focus-within:text-pink-400 transition-colors duration-300" />
                                     </div>
                                     <input
                                         type="text"
-                                        name="date"
-                                        placeholder="Date"
+                                        name="link"
+                                        placeholder="whatsapp link"
                                         value={formdata.link}
                                         onChange={handleChange}
                                         className="w-full pl-12 pr-4 py-4 bg-purple-800/30 backdrop-blur-lg border border-purple-400/30 focus:border-pink-400/50 rounded-2xl text-white placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-pink-400/20 transition-all duration-300 hover:bg-purple-800/40"
