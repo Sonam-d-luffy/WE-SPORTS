@@ -57,6 +57,7 @@ const HostBooking = () => {
         )
     }
 
+  
     return (
         <div className="min-h-screen bg-gradient-to-br from-purple-900 via-violet-900 to-indigo-900 relative overflow-hidden">
             {/* Animated background elements */}
@@ -89,6 +90,17 @@ const HostBooking = () => {
                         </div>
                         
                         <div className="w-32"></div> {/* Spacer for centering */}
+                    </div>
+
+                    {/* Total Bookings Box */}
+                    <div className="mb-8">
+                        <div className="backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl p-6 shadow-xl text-center">
+                            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-purple-500 to-violet-600 rounded-full mb-4">
+                                <Users className="w-8 h-8 text-white" />
+                            </div>
+                            <h2 className="text-3xl font-bold text-white mb-2">{booking.length}</h2>
+                            <p className="text-purple-300 text-lg">Total Bookings</p>
+                        </div>
                     </div>
 
                     {/* Message Display */}

@@ -28,7 +28,7 @@ import l9 from './l9.jpg'
 import l10 from './l10.png'
 import l11 from './l11.png'
 import h1 from './h1.jpg'
-import h2 from './h2.jpg'
+import h2 from './h2.jpeg'
 import h3 from './h3.jpg'
 import logo1 from './logo1.jpg'
 
