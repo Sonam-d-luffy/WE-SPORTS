@@ -136,7 +136,7 @@ useEffect(() => {
               <div className="flex items-center space-x-2 sm:space-x-4">
                 {/* GameHub Logo */}
                 <div className="flex items-center space-x-2 sm:space-x-3 group cursor-pointer">
-                  <img src={assets.logo} className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-purple-200 via-purple-300 to-purple-400 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg transform transition-all duration-500 group-hover:rotate-6 group-hover:scale-110">
+                  <img src={assets.logo1} className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-purple-200 via-purple-300 to-purple-400 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg transform transition-all duration-500 group-hover:rotate-6 group-hover:scale-110">
                   </img>
                   <div>
                     <h3 className="text-lg sm:text-2xl font-bold text-white transition-all duration-300 group-hover:text-purple-200">WE SPORTS</h3>

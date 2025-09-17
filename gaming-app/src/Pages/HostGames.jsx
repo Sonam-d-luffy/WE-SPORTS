@@ -95,7 +95,7 @@ useEffect(() => {
           {/* Logo on top left */}
           <div className="flex items-center space-x-4">
            <img 
-  src={assets.logo} 
+  src={assets.logo1} 
   alt="Logo" 
   className="w-16 h-16 object-contain drop-shadow-2xl hover:scale-110 transition-transform duration-300 rounded-2xl"
 />

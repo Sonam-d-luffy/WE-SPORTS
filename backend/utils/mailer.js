@@ -23,7 +23,7 @@ export const sendBookingEmail = async (email, bookingDetails) => {
       <p><b>Time:</b> ${bookingDetails.time}</p>
       <p><b>Tournament:</b> ${bookingDetails.tournamentName}</p>
         <p>You can get updates here </p>
-      <a href="${process.env.CLIENT_URL}" 
+      <a href="${bookingDetails.link}}" 
          style="display:inline-block;padding:10px 15px;background:#4CAF50;color:#fff;
                 text-decoration:none;border-radius:5px;font-weight:bold;">
         JOIN WHATSAPP COMMUNITY

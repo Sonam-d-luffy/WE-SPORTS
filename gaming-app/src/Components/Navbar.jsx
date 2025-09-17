@@ -33,7 +33,7 @@ const Navbar = () => {
         <div className="bg-purple-100/20 backdrop-blur-md border border-purple-200/20 rounded-3xl px-8 py-4 shadow-lg max-w-4xl w-full flex items-center justify-between relative overflow-hidden">
           {/* Logo */}
           <div className="flex items-center space-x-4 group cursor-pointer relative z-10">
-            <img src={assets.logo} className="w-16 h-16 bg-gradient-to-br from-purple-200/60 via-purple-300/60 to-purple-400/60 rounded-2xl flex items-center justify-center shadow-md transform transition-all duration-500 group-hover:rotate-6 group-hover:scale-110">
+            <img src={assets.logo1} className="w-16 h-16 bg-gradient-to-br from-purple-200/60 via-purple-300/60 to-purple-400/60 rounded-2xl flex items-center justify-center shadow-md transform transition-all duration-500 group-hover:rotate-6 group-hover:scale-110">
             </img>
             <div className="hidden sm:block">
               <h1 className="text-2xl font-bold text-purple-100 transition-all duration-300 group-hover:text-white drop-shadow-lg">WE SPORTS</h1>

@@ -51,7 +51,7 @@ useEffect(() => {
       {/* Logo Background with Opacity */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
-        style={{ backgroundImage: `url(${assets.logo})` }}
+        style={{ backgroundImage: `url(${assets.logo1})` }}
       />
       
       {/* Dark overlay for better text readability */}
@@ -127,11 +127,8 @@ useEffect(() => {
               
               <div className="absolute bottom-6 left-6 right-6 text-white opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-6 group-hover:translate-y-0">
                 <h3 className="text-2xl font-bold mb-2">Host</h3>
-                <p className="text-lg text-pink-200">Star Creator</p>
                 <div className="flex justify-center mt-3">
-                  <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-4 py-1 rounded-full text-sm font-bold">
-                    👑 FEATURED
-                  </span>
+                  
                 </div>
               </div>
             </div>

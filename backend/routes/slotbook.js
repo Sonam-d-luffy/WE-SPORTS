@@ -144,6 +144,7 @@ router.post("/verify-booking", async (req, res) => {
       name: username,
       gameName: game.name, // fetch dynamically if you want
       date:game.date,
+      link:game.link,
       time: game.Time,
       tournamentName: tournament.gameName, // fetch from tournament schema
     });

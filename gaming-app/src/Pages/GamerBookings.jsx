@@ -81,7 +81,7 @@ useEffect(() => {
                 {/* Header */}
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 sm:mb-8 animate-fadeInDown space-y-4 sm:space-y-0">
                     <div className="flex items-center space-x-3 sm:space-x-4">
-                        <img src={assets.logo} alt="" className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl" />
+                        <img src={assets.logo1} alt="" className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl" />
                        
                         <div>
                             <h1 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-purple-300 to-pink-300 bg-clip-text text-transparent">

@@ -84,7 +84,7 @@ const UserPage = () => {
               </a>
               
               <a 
-                href="https://youtube.com/@satyamxd.?si=bMCmJSQR7Ioft4CV"
+                href="https://www.youtube.com/@wesportsindia-03?si=nTr29rFHEtZzax4L"
                 className="group bg-red-500 hover:bg-red-400 p-3 sm:p-4 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-red-500/50"
               >
                 <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white group-hover:animate-pulse" fill="currentColor" viewBox="0 0 24 24">
@@ -93,7 +93,7 @@ const UserPage = () => {
               </a>
               
               <a 
-                href="https://www.instagram.com/satyamxd/"
+                href="https://www.instagram.com/wesportsindia/?igsh=MTVsMGp3NmFlMWdrNQ%3D%3D#"
                 className="group bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-400 hover:to-pink-400 p-3 sm:p-4 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/50"
               >
                 <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white group-hover:animate-pulse" fill="currentColor" viewBox="0 0 24 24">

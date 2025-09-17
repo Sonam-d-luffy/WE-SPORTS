@@ -128,7 +128,7 @@ useEffect(() => {
 
               {/* GameHub Logo Section */}
               <div className="flex items-center space-x-2 sm:space-x-4 bg-gradient-to-r from-purple-800/30 via-indigo-800/25 to-purple-800/30 backdrop-blur-lg border border-purple-400/30 px-3 sm:px-6 py-2 sm:py-3 rounded-xl sm:rounded-2xl shadow-xl">
-                <img src={assets.logo} className="w-10 h-10 sm:w-14 sm:h-14 bg-gradient-to-br from-purple-200 via-purple-300 to-purple-400 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg transform transition-all duration-500 hover:rotate-12 hover:scale-110 cursor-pointer">
+                <img src={assets.logo1} className="w-10 h-10 sm:w-14 sm:h-14 bg-gradient-to-br from-purple-200 via-purple-300 to-purple-400 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg transform transition-all duration-500 hover:rotate-12 hover:scale-110 cursor-pointer">
                 </img>
                 <div>
                   <h3 className="text-lg sm:text-2xl font-bold bg-gradient-to-r from-white via-purple-100 to-pink-100 bg-clip-text text-transparent">WE SPORTS</h3>

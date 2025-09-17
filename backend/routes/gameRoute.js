@@ -150,11 +150,11 @@ router.post("/:tournamentId/games",uploads.single('image') ,async (req, res) => 
       eligibility,
       Time,
       date,
-      
+      link,
       price,
       gameLive
     } = req.body;
-   if(!name || !gameDescription || !eligibility || !Time || !date  || !price || !gameLive){
+   if(!name || !gameDescription || !eligibility || !Time || !date  || !price || !gameLive ||!link){
     return res.status(400).json({message : 'Fill all th required fields'})
    }
     // find tournament
@@ -170,6 +170,7 @@ router.post("/:tournamentId/games",uploads.single('image') ,async (req, res) => 
       eligibility,
       Time,
       date,
+      link,
          image: req.file ? req.file.path.replace(/\\/g, "/") : null,
       price,
       gameLive

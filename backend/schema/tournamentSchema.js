@@ -25,6 +25,7 @@ const gameSchema = new mongoose.Schema({
             'conqueror'
         ]
     },
+    link: String,
     Time: {
         type: String,
         required: true
