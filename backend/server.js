@@ -43,6 +43,8 @@ import gamerLogin from "./routes/gamerLogin.js";
 import gameRoute from "./routes/gameRoute.js";
 import booking from "./routes/slotbook.js";
 import verify from "./routes/verification.js";
+import pincodeRoutes from "./routes/pincode.js";
+
 
 // --------------------- API Routes ---------------------
 app.use("/api/host-auth", hostLogin);
@@ -50,6 +52,8 @@ app.use("/api/gamer-auth", gamerLogin);
 app.use("/api/games", gameRoute);
 app.use("/api/booking", booking);
 app.use("/api/verify", verify);
+app.use("/api", pincodeRoutes);
+
 
 // --------------------- Health Check ---------------------
 app.get("/health", (req, res) => {

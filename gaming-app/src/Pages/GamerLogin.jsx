@@ -50,7 +50,7 @@ useEffect(() => {
     if (formData.pincode.length === 6) {
       try {
         const res = await axios.get(
-          `/pincode/pincode/${formData.pincode}`
+      `${import.meta.env.VITE_API_URL}/api/pincode/${formData.pincode}`
         );
         const data = res.data[0];
         if (data.Status === "Success") {
