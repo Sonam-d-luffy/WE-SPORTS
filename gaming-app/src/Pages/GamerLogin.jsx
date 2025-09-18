@@ -50,7 +50,7 @@ useEffect(() => {
     if (formData.pincode.length === 6) {
       try {
         const res = await axios.get(
-          `https://api.postalpincode.in/pincode/${formData.pincode}`
+          `http://api.postalpincode.in/pincode/${formData.pincode}`
         );
         const data = res.data[0];
         if (data.Status === "Success") {
