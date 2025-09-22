@@ -1,30 +1,27 @@
-import nodemailer from 'nodemailer'
-import dotenv from 'dotenv'
-dotenv.config()
-const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS
-    }
-})
+import axios from "axios";
+import dotenv from "dotenv";
+dotenv.config();
 
-export const sendEmailOTP = async(email , otp) => {
-    await transporter.sendMail({
-        from: process.env.EMAIL_USER,
+export const sendEmailOTP = async (email, otp) => {
+  try {
+    await axios.post(
+      "https://api.resend.com/emails",
+      {
+        from: process.env.RESEND_VERIFIED_EMAIL, // verified in Resend
         to: email,
-        subject: 'Slot booking Signup OTP',
-        text: `Your OTP is ${otp}. It will expire in 2 minutes.`,
-        
-    })
-}
+        subject: "      We sports Signup OTP",
+        html: `<p>Your OTP is <b>${otp}</b>. It will expire in 2 minutes.</p>`,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
-// const client = twilio(process.env.TWILIO_SID , process.env.TWILIO_AUTH)
-
-// export const  sendPhoneOTP = async(phone , otp) => {
-//     await client.messages.create({
-//        body: `Your School Signup OTP is ${otp}. Valid for 5 minutes.`,
-//     from: process.env.TWILIO_PHONE, 
-//     to: phone,
-//     })
-// }
+    //console.log("✅ OTP email sent:", response.data);
+  } catch (error) {
+    console.error("❌ Error sending OTP email:", error.response?.data || error.message);
+  }
+};
