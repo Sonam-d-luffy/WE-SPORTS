@@ -1,14 +1,12 @@
 // server.js
 import express from "express";
-import path from "path";
-import { fileURLToPath } from "url";
 import cors from "cors";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
+import path from "path";
 
 // --------------------- Load Environment ---------------------
-// If your .env is in the same folder as server.js
-dotenv.config({ path: path.resolve('./.env') });
+dotenv.config(); // Railway automatically uses your environment variables
 
 // Debug: confirm envs
 console.log("Loaded envs:");
@@ -63,26 +61,18 @@ app.get("/health", (req, res) => {
   res.json({ status: "ok", time: new Date() });
 });
 
-// --------------------- React Frontend Serving ---------------------
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const frontendPath = path.join(__dirname, "dist"); // Vite build output
-
-app.use(express.static(frontendPath));
-
-app.get(/^\/(?!api).*/, (req, res) => {
-  res.sendFile(path.join(frontendPath, "index.html"));
-});
-
 // --------------------- MongoDB Connection ---------------------
 if (!process.env.MONGO_URL) {
   console.error("❌ MONGO_URL not defined in environment variables!");
-  process.exit(1); // stop the server
+  process.exit(1);
 }
 
 mongoose.connect(process.env.MONGO_URL)
   .then(() => console.log("✅ Database connected"))
-  .catch(err => console.error("❌ Database connection error:", err));
+  .catch(err => {
+    console.error("❌ Database connection error:", err);
+    process.exit(1);
+  });
 
 // --------------------- Start Server ---------------------
 const PORT = process.env.PORT || 5000;
