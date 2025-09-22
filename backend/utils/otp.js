@@ -4,7 +4,7 @@ dotenv.config();
 
 export const sendEmailOTP = async (email, otp) => {
   try {
-    await axios.post(
+    const res = await axios.post(
       "https://api.resend.com/emails",
       {
         from: process.env.RESEND_VERIFIED_EMAIL, // verified in Resend
