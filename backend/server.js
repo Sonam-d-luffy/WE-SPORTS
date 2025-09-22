@@ -6,9 +6,16 @@ import cors from "cors";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 
-// Load environment variables
-dotenv.config();
+// --------------------- Load Environment ---------------------
+// If your .env is in the same folder as server.js
+dotenv.config({ path: path.resolve('./.env') });
 
+// Debug: confirm envs
+console.log("Loaded envs:");
+console.log("MONGO_URL:", process.env.MONGO_URL);
+console.log("PORT:", process.env.PORT);
+
+// --------------------- Express Setup ---------------------
 const app = express();
 
 // --------------------- CORS Setup ---------------------
@@ -19,9 +26,7 @@ const allowedOrigins = [
 
 app.use(cors({
   origin: function (origin, callback) {
-    // allow requests with no origin (server-to-server, curl, mobile apps)
-    if (!origin) return callback(null, true);
-
+    if (!origin) return callback(null, true); // allow server-to-server or curl
     const cleanOrigin = origin.replace(/\/$/, "");
     if (allowedOrigins.includes(cleanOrigin)) {
       return callback(null, true);
@@ -45,7 +50,6 @@ import booking from "./routes/slotbook.js";
 import verify from "./routes/verification.js";
 import pincodeRoutes from "./routes/pincode.js";
 
-
 // --------------------- API Routes ---------------------
 app.use("/api/host-auth", hostLogin);
 app.use("/api/gamer-auth", gamerLogin);
@@ -53,7 +57,6 @@ app.use("/api/games", gameRoute);
 app.use("/api/booking", booking);
 app.use("/api/verify", verify);
 app.use("/api", pincodeRoutes);
-
 
 // --------------------- Health Check ---------------------
 app.get("/health", (req, res) => {
@@ -67,15 +70,19 @@ const frontendPath = path.join(__dirname, "dist"); // Vite build output
 
 app.use(express.static(frontendPath));
 
-// Catch-all: serve index.html for any route NOT starting with /api
 app.get(/^\/(?!api).*/, (req, res) => {
   res.sendFile(path.join(frontendPath, "index.html"));
 });
 
 // --------------------- MongoDB Connection ---------------------
+if (!process.env.MONGO_URL) {
+  console.error("❌ MONGO_URL not defined in environment variables!");
+  process.exit(1); // stop the server
+}
+
 mongoose.connect(process.env.MONGO_URL)
-.then(() => console.log("✅ Database connected"))
-.catch(err => console.error("❌ Database connection error:", err));
+  .then(() => console.log("✅ Database connected"))
+  .catch(err => console.error("❌ Database connection error:", err));
 
 // --------------------- Start Server ---------------------
 const PORT = process.env.PORT || 5000;
