@@ -4,12 +4,14 @@ dotenv.config();
 
 export const sendEmailOTP = async (email, otp) => {
   try {
+    console.log("Sending OTP to:", email);
+
     const res = await axios.post(
       "https://api.resend.com/emails",
       {
         from: process.env.RESEND_VERIFIED_EMAIL, // verified in Resend
         to: email,
-        subject: "      We sports Signup OTP",
+        subject: "We Sports Signup OTP",
         html: `<p>Your OTP is <b>${otp}</b>. It will expire in 2 minutes.</p>`,
       },
       {
@@ -20,8 +22,11 @@ export const sendEmailOTP = async (email, otp) => {
       }
     );
 
-    //console.log("✅ OTP email sent:", response.data);
+    console.log("✅ OTP email sent:", res.data); // log response to verify
   } catch (error) {
-    console.error("❌ Error sending OTP email:", error.response?.data || error.message);
+    console.error(
+      "❌ Error sending OTP email:",
+      error.response?.data || error.message
+    );
   }
 };

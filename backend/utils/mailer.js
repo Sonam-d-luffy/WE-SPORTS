@@ -4,10 +4,12 @@ dotenv.config();
 
 export const sendBookingEmail = async (email, bookingDetails) => {
   try {
+    console.log("Sending booking email to:", email);
+
     const response = await axios.post(
       "https://api.resend.com/emails",
       {
-        from: process.env.RESEND_VERIFIED_EMAIL, // verified in Resend
+        from: process.env.RESEND_VERIFIED_EMAIL, // must be verified in Resend
         to: email,
         subject: "🎮 Slot Booking Confirmation",
         html: `
@@ -35,8 +37,8 @@ export const sendBookingEmail = async (email, bookingDetails) => {
       }
     );
 
-    //console.log("✅ Email sent:", response.data);
+    console.log("✅ Booking email sent:", response.data);
   } catch (error) {
-    console.error("❌ Error sending email:", error.response?.data || error.message);
+    console.error("❌ Error sending booking email:", error.response?.data || error.message);
   }
 };
