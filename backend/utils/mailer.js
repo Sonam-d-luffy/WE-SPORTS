@@ -9,7 +9,7 @@ export const sendBookingEmail = async (email, bookingDetails) => {
     const response = await axios.post(
       "https://api.resend.com/emails",
       {
-        from: process.env.RESEND_VERIFIED_EMAIL, // must be verified in Resend
+        from:  "https://api.resend.com/emails", // must be verified in Resend
         to: email,
         subject: "🎮 Slot Booking Confirmation",
         html: `

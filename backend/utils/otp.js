@@ -9,7 +9,7 @@ export const sendEmailOTP = async (email, otp) => {
     const res = await axios.post(
       "https://api.resend.com/emails",
       {
-        from: process.env.RESEND_VERIFIED_EMAIL, // verified in Resend
+        from: "We Sports <onboarding@resend.dev>", // verified in Resend
         to: email,
         subject: "We Sports Signup OTP",
         html: `<p>Your OTP is <b>${otp}</b>. It will expire in 2 minutes.</p>`,

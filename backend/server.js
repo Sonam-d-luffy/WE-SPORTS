@@ -73,10 +73,7 @@ app.get(/^\/(?!api).*/, (req, res) => {
 });
 
 // --------------------- MongoDB Connection ---------------------
-mongoose.connect(process.env.MONGO_URL, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
+mongoose.connect(process.env.MONGO_URL)
 .then(() => console.log("✅ Database connected"))
 .catch(err => console.error("❌ Database connection error:", err));
 
