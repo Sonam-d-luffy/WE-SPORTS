@@ -4,7 +4,7 @@ dotenv.config();
 
 export const sendEmailOTP = async (email, otp) => {
   try {
-    console.log("Sending OTP to:", email);
+    //console.log("Sending OTP to:", email);
 
     const res = await axios.post(
       "https://api.resend.com/emails",
