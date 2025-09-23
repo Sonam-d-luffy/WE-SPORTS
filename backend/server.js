@@ -82,7 +82,7 @@ mongoose.connect(process.env.MONGO_URL)
   .catch(err => console.error("❌ Database connection error:", err));
 
 // --------------------- Start Server ---------------------
-const PORT = process.env.PORT 
+const PORT = process.env.PORT || 8080
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
 });
