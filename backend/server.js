@@ -1,16 +1,16 @@
 // server.js
 import express from "express";
+import path from "path";
+import { fileURLToPath } from "url";
 import cors from "cors";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import path from "path";
 
 // --------------------- Load Environment ---------------------
-dotenv.config(); // Railway automatically uses your environment variables
+dotenv.config(); // Railway automatically injects env vars
 
-// Debug: confirm envs
 console.log("Loaded envs:");
-console.log("MONGO_URL:", process.env.MONGO_URL);
+//console.log("MONGO_URL:", process.env.MONGO_URL);
 console.log("PORT:", process.env.PORT);
 
 // --------------------- Express Setup ---------------------
@@ -18,13 +18,13 @@ const app = express();
 
 // --------------------- CORS Setup ---------------------
 const allowedOrigins = [
-  process.env.FRONTEND_URL_LOCAL?.trim().replace(/\/$/, ""),
-  process.env.FRONTEND_URL?.trim().replace(/\/$/, "")
+  process.env.FRONTEND_URL?.trim().replace(/\/$/, ""),
+  process.env.FRONTEND_URL_LOCAL?.trim().replace(/\/$/, "")
 ];
 
 app.use(cors({
   origin: function (origin, callback) {
-    if (!origin) return callback(null, true); // allow server-to-server or curl
+    if (!origin) return callback(null, true); // server-to-server or mobile apps
     const cleanOrigin = origin.replace(/\/$/, "");
     if (allowedOrigins.includes(cleanOrigin)) {
       return callback(null, true);
@@ -61,21 +61,28 @@ app.get("/health", (req, res) => {
   res.json({ status: "ok", time: new Date() });
 });
 
+// --------------------- React Frontend Serving ---------------------
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const frontendPath = path.join(__dirname, "dist"); // Vite build output
+
+app.use(express.static(frontendPath));
+app.get(/^\/(?!api).*/, (req, res) => {
+  res.sendFile(path.join(frontendPath, "index.html"));
+});
+
 // --------------------- MongoDB Connection ---------------------
 if (!process.env.MONGO_URL) {
-  console.error("❌ MONGO_URL not defined in environment variables!");
+  console.error("❌ MONGO_URL not defined! Make sure to set it in Railway Variables.");
   process.exit(1);
 }
 
 mongoose.connect(process.env.MONGO_URL)
   .then(() => console.log("✅ Database connected"))
-  .catch(err => {
-    console.error("❌ Database connection error:", err);
-    process.exit(1);
-  });
+  .catch(err => console.error("❌ Database connection error:", err));
 
 // --------------------- Start Server ---------------------
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT 
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
 });
