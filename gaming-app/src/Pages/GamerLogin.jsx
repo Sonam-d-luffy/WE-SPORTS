@@ -75,17 +75,17 @@ useEffect(() => {
                 const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/gamer-auth/login` , {email , password})
                          setMessage(res.data.message)
 // Example in your Signup.jsx after successful signup
-      setMessage(res.data.message)
+    //  setMessage(res.data.message)
 
-      if (res.data.redirect === 'otp') {
+    //  if (res.data.redirect === 'otp') {
         // email not verified → redirect to OTP
-        navigate('/otp-verify', { state: { gamerId: res.data.userId } })
-      } else {
+      //  navigate('/otp-verify', { state: { gamerId: res.data.userId } })
+    //  } else {
         // verified user → normal login
         setCurrentUser(res.data.user)
         localStorage.setItem("token", res.data.token)
         navigate('/')
-      }
+    //  }
                            
             } else {
                 const form = new FormData()
@@ -104,14 +104,14 @@ useEffect(() => {
             //alert(res.data.message)
             setMessage(res.data.message)
 // Example in your Signup.jsx after successful signup
-navigate('/otp-verify', { state: { gamerId: res.data.userId } });
+//navigate('/otp-verify', { state: { gamerId: res.data.userId } });
 
 
             setFormData({
              name: '' , email: '' , password: ''  , state: '' , district: '' , local : '',image: '', pincode: '' , phone: ''
             })
             }
-           // navigate('/')
+           navigate('/')
         } catch (error) {
   setMessage(error.response?.data?.message || error.message)
         }finally{

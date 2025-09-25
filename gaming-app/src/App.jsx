@@ -1,4 +1,4 @@
-import { BrowserRouter , Routes , Route } from 'react-router-dom'
+import { BrowserRouter , Routes , Route, Link } from 'react-router-dom'
 import './App.css'
 import Home from './Pages/Home'
 import HostLogin from './Pages/HostLogin'
@@ -16,6 +16,7 @@ import HostBooking from './Pages/HostBooking'
 import Otp from './Pages/Otp'
 import GamerBookings from './Pages/GamerBookings'
 import Term from './Pages/Term'
+import GameLink from './Pages/GameLink'
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
   <Route path='/tournaments' element={<Tournaments/>}/>
   <Route path='/hosts' element={<Hosts/>}/>
   <Route path='/t&c' element={<Term/>}/>
+  <Route path='/link' element={<GameLink/>}/>
   <Route path='/:tournamentId/:gameId/bookslots' element={<BookSlots/>}/>
   <Route path='/hostTournament' element={<HostTournaments/>}/>
   <Route path='/:tournamentId/uploadGames' element={<AddGames/>}/>
