@@ -210,7 +210,9 @@ router.get('/:tournamentId/:gameId/link', async (req, res) => {
     }
 
     // Find the game inside the tournament
-    const game = tournament.games.find(gameId)
+// ✅ Correct way
+const game = tournament.games.find(g => g._id.toString() === gameId);
+
     if (!game) {
       return res.status(404).json({ message: 'Game not found in this tournament' })
     }
