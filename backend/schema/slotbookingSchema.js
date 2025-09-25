@@ -73,6 +73,9 @@ const bookingSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  link: {
+    type:String
+  }
 });
 
 const Booking = mongoose.model("Booking", bookingSchema);
