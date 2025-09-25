@@ -199,6 +199,28 @@ router.delete('/delete-booking/:bookingId' , async(req , res) => {
   }
 })
 
+router.get('/:tournamentId/:gameId/link', async (req, res) => {
+  try {
+    const { tournamentId, gameId } = req.params
 
+    // Find the tournament
+    const tournament = await Tournament.findById(tournamentId)
+    if (!tournament) {
+      return res.status(404).json({ message: 'Tournament not found' })
+    }
+
+    // Find the game inside the tournament
+    const game = tournament.games.find(gameId)
+    if (!game) {
+      return res.status(404).json({ message: 'Game not found in this tournament' })
+    }
+
+    // Return the game link
+    res.json({ gameLink: game.link })  // assuming your game schema has a 'link' field
+  } catch (error) {
+    console.error(error)
+    res.status(500).json({ message: 'Server error' })
+  }
+})
 export default router;
  

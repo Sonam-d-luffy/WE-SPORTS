@@ -32,7 +32,7 @@ function App() {
   <Route path='/tournaments' element={<Tournaments/>}/>
   <Route path='/hosts' element={<Hosts/>}/>
   <Route path='/t&c' element={<Term/>}/>
-  <Route path='/link' element={<GameLink/>}/>
+  <Route path='/:tournamentId/:gameId/link' element={<GameLink/>}/>
   <Route path='/:tournamentId/:gameId/bookslots' element={<BookSlots/>}/>
   <Route path='/hostTournament' element={<HostTournaments/>}/>
   <Route path='/:tournamentId/uploadGames' element={<AddGames/>}/>

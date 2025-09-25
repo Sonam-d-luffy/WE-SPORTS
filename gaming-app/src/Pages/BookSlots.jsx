@@ -103,7 +103,7 @@ const BookSlots = () => {
       alert('Payment will be verified! Booking saved.')
       setPaymentData(null)
      // navigate(`/${tournamentId}/yourgames`)
-     navigate('/link' , { state: { booking: res.data.booking } })
+     navigate(`/${tournamentId}/${gameId}/link` , { state: { booking: res.data.booking } })
     } catch (err) {
       alert(err.response?.data?.message || 'Payment verification failed')
     }
