@@ -125,58 +125,73 @@ useEffect(() => {
                 {!loading && booking.length > 0 && (
                     <div className="grid gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3 animate-fadeInUp">
                         {booking.map((b, index) => (
-                            <div 
-                                key={b._id}
-                                className="group relative p-4 sm:p-6 bg-gradient-to-br from-purple-800/40 to-indigo-800/40 backdrop-blur-xl rounded-2xl border border-purple-400/30 hover:border-purple-300/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25"
-                                style={{
-                                    animationDelay: `${index * 150}ms`
-                                }}
-                            >
-                                {/* Card Glow Effect */}
-                                <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 to-pink-600/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                
-                                <div className="relative z-10">
-                                    {/* Game Header */}
-                                    <div className="flex items-start justify-between mb-3 sm:mb-4">
-                                        <div className="flex items-center space-x-2 sm:space-x-3">
-                                            <div className="p-1.5 sm:p-2 bg-purple-600/30 rounded-lg">
-                                                <Gamepad2 className="w-4 h-4 sm:w-5 sm:h-5 text-purple-300" />
-                                            </div>
-                                            <div>
-                                                <h3 className="font-bold text-white text-base sm:text-lg group-hover:text-purple-200 transition-colors duration-300">
-                                                    {b.name}
-                                                </h3>
-                                            </div>
-                                        </div>
-                                        <div className={`px-2 sm:px-3 py-1 rounded-full text-xs font-medium ${getStatusColor(b.paymentStatus)} flex items-center space-x-1`}>
-                                            {getPaymentIcon(b.paymentStatus)}
-                                            <span className="hidden sm:inline">{b.paymentStatus}</span>
-                                            <span className="sm:hidden">{b.paymentStatus.slice(0, 4)}</span>
-                                        </div>
-                                    </div>
+              <div 
+  key={b._id}
+  className="group relative p-4 sm:p-6 bg-gradient-to-br from-purple-800/40 to-indigo-800/40 backdrop-blur-xl rounded-2xl border border-purple-400/30 hover:border-purple-300/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25"
+  style={{
+      animationDelay: `${index * 150}ms`
+  }}
+>
+  {/* Card Glow Effect */}
+  <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 to-pink-600/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+  
+  <div className="relative z-10">
+      {/* Game Header */}
+      <div className="flex items-start justify-between mb-3 sm:mb-4">
+          <div className="flex items-center space-x-2 sm:space-x-3">
+              <div className="p-1.5 sm:p-2 bg-purple-600/30 rounded-lg">
+                  <Gamepad2 className="w-4 h-4 sm:w-5 sm:h-5 text-purple-300" />
+              </div>
+              <div>
+                  <h3 className="font-bold text-white text-base sm:text-lg group-hover:text-purple-200 transition-colors duration-300">
+                      {b.name}
+                  </h3>
+              </div>
+          </div>
+          <div className={`px-2 sm:px-3 py-1 rounded-full text-xs font-medium ${getStatusColor(b.paymentStatus)} flex items-center space-x-1`}>
+              {getPaymentIcon(b.paymentStatus)}
+              <span className="hidden sm:inline">{b.paymentStatus}</span>
+              <span className="sm:hidden">{b.paymentStatus.slice(0, 4)}</span>
+          </div>
+      </div>
 
-                                    {/* Player Info */}
-                                    <div className="space-y-2 sm:space-y-3">
-                                        <div className="flex items-center space-x-2 sm:space-x-3 text-purple-200">
-                                            <User className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-purple-400" />
-                                            <span className="text-xs sm:text-sm">{b.username}</span>
-                                        </div>
+      {/* Player Info */}
+      <div className="space-y-2 sm:space-y-3">
+          <div className="flex items-center space-x-2 sm:space-x-3 text-purple-200">
+              <User className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-purple-400" />
+              <span className="text-xs sm:text-sm">{b.username}</span>
+          </div>
 
-                                        <div className="flex items-center space-x-2 sm:space-x-3 text-purple-200">
-                                            <Trophy className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-yellow-400" />
-                                            <span className="text-xs sm:text-sm font-medium text-yellow-300">{b.rank}</span>
-                                        </div>
+          <div className="flex items-center space-x-2 sm:space-x-3 text-purple-200">
+              <Trophy className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-yellow-400" />
+              <span className="text-xs sm:text-sm font-medium text-yellow-300">{b.rank}</span>
+          </div>
 
-                                        <div className="flex items-center space-x-2 sm:space-x-3">
-                                            <IndianRupee className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-green-400" />
-                                            <span className="text-base sm:text-lg font-bold text-green-300">{b.amount}</span>
-                                        </div>
-                                    </div>
+          <div className="flex items-center space-x-2 sm:space-x-3">
+              <IndianRupee className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-green-400" />
+              <span className="text-base sm:text-lg font-bold text-green-300">{b.amount}</span>
+          </div>
 
-                                    {/* Hover Effect Line */}
-                                    <div className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-                                </div>
-                            </div>
+          {/* 🔗 New Section for Link */}
+          {b.link && (
+              <div className="flex items-center space-x-2 sm:space-x-3">
+                  <a 
+                    href={b.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-xs sm:text-sm font-medium text-blue-300 hover:text-blue-200 underline transition-colors duration-300"
+                  >
+                    Open Link
+                  </a>
+              </div>
+          )}
+      </div>
+
+      {/* Hover Effect Line */}
+      <div className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+  </div>
+</div>
+
                         ))}
                     </div>
                 )}
