@@ -171,17 +171,16 @@ useEffect(() => {
               <IndianRupee className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-green-400" />
               <span className="text-base sm:text-lg font-bold text-green-300">{b.amount}</span>
           </div>
-
-          {/* 🔗 New Section for Link */}
+     {/* 🔗 New Section for Link */}
           {b.link && (
-              <div className="flex items-center space-x-2 sm:space-x-3">
+              <div className="flex items-center space-x-2 sm:space-x-3 bg-green-500/20 backdrop-blur-sm p-2 sm:p-3 rounded-lg border border-green-400/30">
                   <a 
                     href={b.link} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-xs sm:text-sm font-medium text-blue-300 hover:text-blue-200 underline transition-colors duration-300"
+                    className="text-xs sm:text-sm font-medium text-green-200 hover:text-green-100 underline transition-colors duration-300"
                   >
-                    Open Link
+                    Whatsapp Group link
                   </a>
               </div>
           )}
