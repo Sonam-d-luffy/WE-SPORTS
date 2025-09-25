@@ -95,9 +95,8 @@ useEffect(() => {
     
                 })
                 
-            const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/gamer-auth/signup` , form ,{
-                headers: {'Content-Type' : 'application/json'}
-            })
+            const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/gamer-auth/signup` , form 
+            )
                   // redirect to OTP page instead of home
             //setUser(res.data.user)
             setCurrentUser(res.data.user)
