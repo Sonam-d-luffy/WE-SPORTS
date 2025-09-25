@@ -100,18 +100,18 @@ useEffect(() => {
             })
                   // redirect to OTP page instead of home
             //setUser(res.data.user)
-            //setCurrentUser(res.data.user)
+            setCurrentUser(res.data.user)
             //alert(res.data.message)
             setMessage(res.data.message)
 // Example in your Signup.jsx after successful signup
 //navigate('/otp-verify', { state: { gamerId: res.data.userId } });
 
+           navigate('/')
 
             setFormData({
              name: '' , email: '' , password: ''  , state: '' , district: '' , local : '',image: '', pincode: '' , phone: ''
             })
             }
-           navigate('/')
         } catch (error) {
   setMessage(error.response?.data?.message || error.message)
         }finally{
