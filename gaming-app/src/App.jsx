@@ -32,7 +32,6 @@ function App() {
   <Route path='/tournaments' element={<Tournaments/>}/>
   <Route path='/hosts' element={<Hosts/>}/>
   <Route path='/t&c' element={<Term/>}/>
-  <Route path='/:tournamentId/:gameId/link' element={<GameLink/>}/>
   <Route path='/:tournamentId/:gameId/bookslots' element={<BookSlots/>}/>
   <Route path='/hostTournament' element={<HostTournaments/>}/>
   <Route path='/:tournamentId/uploadGames' element={<AddGames/>}/>
@@ -40,6 +39,8 @@ function App() {
   <Route path='/:tournamentId/hostgames' element={<HostGames/>}/>
   <Route path='/:tournamentId/:gameId/bookings' element={<HostBooking/>}/>
   <Route path='/:gamerId/bookings' element={<GamerBookings/>}/>
+  <Route path='/:tournamentId/:gameId/link' element={<GameLink/>}/>
+
 </Routes>
     </BrowserRouter>
   )
