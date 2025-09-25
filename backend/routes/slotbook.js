@@ -138,9 +138,8 @@ router.post("/verify-booking", async (req, res) => {
       amount: game.price,
       paymentStatus: "success",
       transactionId,
-      game:{
-        link : game.link
-      }
+      link:game.link
+      
     });
 
     //      await sendBookingEmail(gamer.email, {
@@ -154,7 +153,7 @@ router.post("/verify-booking", async (req, res) => {
     await booking.save();
      
 
-    res.status(200).json({ message: "Payment verified and booking saved!", booking });
+    res.status(200).json({ message: "Payment verified and booking saved!", booking:booking });
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Internal server error", error });

@@ -23,10 +23,10 @@ const GameLink = () => {
             📌 Join the WhatsApp Group
           </p>
 
-          {booking?.game?.link ? (
+          {booking?.link ? (
             <>
               <a
-                href={booking.game.link}
+                href={booking.link}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-lg shadow-lg transition-all duration-300 ease-in-out"
@@ -35,7 +35,7 @@ const GameLink = () => {
               </a>
               <div className="mt-4 p-3 bg-white/60 rounded-xl border border-purple-100">
                 <p className="text-xs text-gray-500 text-center break-all font-mono">
-                  {booking.game.link}
+                  {booking.link}
                 </p>
               </div>
             </>

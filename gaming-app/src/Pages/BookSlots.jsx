@@ -100,7 +100,7 @@ const BookSlots = () => {
       }
 
       const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/booking/verify-booking`, payload)
-      alert('Payment will be verified verified! Booking saved.')
+      alert('Payment will be verified! Booking saved.')
       setPaymentData(null)
      // navigate(`/${tournamentId}/yourgames`)
      navigate('/link' , { state: { booking: res.data.booking } })
