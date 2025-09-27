@@ -134,6 +134,7 @@ router.post("/verify-booking", async (req, res) => {
       username,
       tournamentId,
       rank,
+      phone:gamer.phone,
       name:game.name,
       amount: game.price,
       paymentStatus: "success",

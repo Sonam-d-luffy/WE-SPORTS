@@ -75,6 +75,9 @@ const bookingSchema = new mongoose.Schema({
   },
   link: {
     type:String
+  },
+  phone: {
+    type:String
   }
 });
 
