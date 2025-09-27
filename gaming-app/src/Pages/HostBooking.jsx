@@ -153,7 +153,7 @@ const HostBooking = () => {
                                         </div>
                                          <div className="flex items-center gap-3 text-purple-200">
                                             <Hash className="w-4 h-4 text-purple-400" />
-                                            <span className="text-sm">User ID:</span>
+                                            <span className="text-sm">Phone:</span>
                                             <span className="text-white font-mono text-sm">{b.phone}</span>
                                         </div>
                                         <div className="flex items-center gap-3 text-purple-200">
